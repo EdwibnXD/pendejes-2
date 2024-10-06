@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Pendejez</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .resultado {
+            font-size: 24px;
+            color: #d9534f;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>¿Qué tan "pendejo" eres?</h1>
+    <p>Escribe tu nombre para descubrirlo:</p>
+
+    <input type="text" id="nombre" placeholder="Escribe tu nombre">
+    <br>
+    <button onclick="calcularPendejez()">Calcular Pendejez</button>
+
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        function calcularPendejez() {
+            var nombre = document.getElementById("nombre").value;
+            if (nombre.trim() === "") {
+                alert("Por favor, ingresa un nombre");
+                return;
+            }
+
+            // Generar un porcentaje aleatorio entre 0 y 100
+            var porcentaje = Math.floor(Math.random() * 101);
+
+            // Mostrar el resultado en la página
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = nombre + ", tu nivel de 'pendejez' es del " + porcentaje + "%";
+        }
+    </script>
+
+</body>
+</html>
